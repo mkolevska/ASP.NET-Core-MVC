@@ -1,0 +1,33 @@
+﻿@model List<TransactionApp.Models.Transaction>
+@{
+}
+<h1>Transactions</h1>
+<table class="table table-bordered table-striped" style="width: 100%">
+<thead>
+    <tr>
+        <th>AccountNumber</th>
+        <th>BeficiaryName</th>
+        <th>Date</th>
+        <th>Ammount</th>
+
+    </tr>
+</thead>
+<tbody>
+    @foreach(var transaction in Model){
+        <tr>
+            <td>@transaction.AccountNumber</td>
+            <td>@transaction.BeficiaryName</td>
+            <td>@transaction.Date</td>
+            <td>@transaction.Amount</td>
+           <div class="w-75 btn-group">
+               <td>
+               <a asp-controller="TransactionControllercs" asp-action="EditTransaction" class="btn btn-primary mx-2" asp-route-id="@transaction.TransactionId">
+                   <i class="bi bi-pencil-square">Edit</i> 
+               </a>
+               
+               </td>
+           </div>
+        </tr>
+    }
+</tbody>
+</table>

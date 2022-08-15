@@ -1,0 +1,33 @@
+﻿@model TransactionApp.Models.EditTransaction
+@{
+}
+<h1>Edit Transaction</h1>
+<form class="mt-4" method = "post" action="EditTransaction">
+      <div class="form-group">
+    <label for="">Transacton Id</label>
+    <input type="text" class="form-control" asp-for="TransactionId" readonly>
+  </div>
+  <div class="form-group">
+    <label for="">Accont Number</label>
+    <input type="text" class="form-control" asp-for="AccountNumber">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Beificary Name</label>
+    <input type="text" class="form-control" asp-for="BeficiaryName">
+  </div>
+   <div class="form-group">
+    <label for="">Bank Name</label>
+    <input type="text" class="form-control" asp-for="BankName">
+  </div>
+    <div class="form-group">
+    <label for="">SWIT Code</label>
+    <input type="text" class="form-control" asp-for="SWITCode">
+  </div>
+    <div class="form-group">
+    <label for="">Amount</label>
+    <input type="text" class="form-control" asp-for="Amount">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" asp-controller="TransactionControllercs" asp-action="Index">BackToList</button>
+    <button type="submit" class="btn btn-danger" asp-controller="TransactionControllercs" asp-action="Delete">Delete</button>
+</form>
